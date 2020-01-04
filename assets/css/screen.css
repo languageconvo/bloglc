@@ -1928,7 +1928,7 @@ Usage (In Ghost editor):
 }
 
 .read-next .static-avatar {
-    border-color: #000;
+    /* removed border color */
 }
 
 .read-next .post-card-byline-content {
