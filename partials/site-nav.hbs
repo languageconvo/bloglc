@@ -6,36 +6,26 @@
     <div class="site-nav-left-wrapper">
         <div class="site-nav-left">
             {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                <a class="site-nav-logo" href="https://www.languageconvo.com/"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+                <a class="site-nav-logo" href="https://www.languageconvo.com/">{{@site.title}}</a>
             {{/if}}
+            {{!-- removed handlebars and hardcoded --}}
             <div class="site-nav-content">
-                {{#if @site.navigation}}
-                    {{navigation}}
-                {{/if}}
-                {{#is "post"}}
-                    <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
-                {{/is}}
+                <ul class="nav" role="menu">
+                    <li role="menuitem"><a href="https://www.languageconvo.com/en/how-it-works/"><span class="navbarLink1">How It Works</span></a></li>
+                    <li role="menuitem"><a href="https://www.languageconvo.com/en/prices/"><span class="navbarLink2">Prices</span></a></li>
+                    <li role="menuitem"><a href="{{@site.url}}"><span class="navbarLink3">Blog</span></a></li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="site-nav-right">
-        {{#if @site.secondary_navigation}}
-            {{navigation type="secondary"}}
-        {{else}}
-            <div class="social-links">
-                {{#if @site.facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                    <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-            </div>
-            {{#unless @labs.members}}
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            {{/unless}}
-        {{/if}}
+        {{!-- removed handlebars and hardcoded --}}
+        <ul class="nav" role="menu">
+            <li class="nav-get-started nav-current navbarButton lift" role="menuitem"><a href="https://www.languageconvo.com/en/free-trial/">Get Started</a></li>
+            <li class="nav-log-in nav-current navbarLink4Container" role="menuitem"><a href="https://www.languageconvo.com/studenthome/"><span class="navbarLink4">Log In</span></a></li>
+        </ul>
     </div>
 
 </nav>

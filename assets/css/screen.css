@@ -409,45 +409,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 1;
 }
 
-/*Menu hover restyled*/
-.nav li a:after {
-    content: "";
-    position: absolute;
-    bottom: 5px;
-    left: 10%;
-    height: 2px;
-    width: 80%;
-    background: #fff;
-    transition: all 0.35s ease-in-out;
-}
-
-.nav li a:hover:after {
-    left: 0;
-    width: 100%;
-    bottom:1px;
-    background: #38c690;
-}
-/*styling of "get started" button */
-.site-nav-right > ul > li:first-child > a {  
-     background: #38c690; 
-     border: 1px solid transparent; 
-     color: #fff;
-     padding: 10px 30px;
-     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-     border-radius: 0.6rem;
-     -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
-     transition: box-shadow .25s ease, -webkit-transform .25s ease;
-     transition: box-shadow .25s ease, transform .25s ease;
-     transition: box-shadow .25s ease, transform .25s ease, -webkit-transform .25s ease; 
-
-}
-.site-nav-right > ul > li:first-child > a:hover{
-     background: #30a87a;
-     box-shadow: none;
-}
-.site-nav-right > ul > li:first-child > a::after{content: none;}
-
-
 .nav-post-title-active .nav {
     visibility: hidden;
     opacity: 0;
@@ -616,7 +577,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 /* CSS-only hamburger */
 
-.site-nav label, #menu-toggle { display: none } 
+.site-nav label, #menu-toggle { display: none }
 
 @media screen and (max-width: 900px){
       .site-nav label {
@@ -628,7 +589,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
             padding: 20px;
             order: 2;
             margin: 0 -20px;
-	    z-index: 1100;	
+	    z-index: 1100;
             position: fixed;
             right: 20px;
             top: 0;
@@ -636,14 +597,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 /* toggle menu visiility upon hamburger click */
        .site-nav > div > div > div {display:none;}
        .site-nav .site-nav-right > ul > li {display:none;}
-       .site-nav #menu-toggle:checked ~ div > div > div {display:block;}	
-       .site-nav #menu-toggle:checked ~ .site-nav-right > ul > li {display:block;}	
-/* accomodate menu to stick to the left side */	
+       .site-nav #menu-toggle:checked ~ div > div > div {display:block;}
+       .site-nav #menu-toggle:checked ~ .site-nav-right > ul > li {display:block;}
+/* accomodate menu to stick to the left side */
        .nav { flex-direction: column;}
        .site-nav-left-wrapper{
 	    position: fixed;
 	    top:0;
-	    left: 0;	
+	    left: 0;
 	    background: #fff no-repeat 50%;
             width: 100%;
 	}
@@ -666,7 +627,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
           justify-content: center;
 
 	}
-	
+
 }
 
 
@@ -3117,3 +3078,114 @@ Usage (In Ghost editor):
         color: color(var(--green) l(+5%) s(-5%));
     }
 }
+
+/* region languageconvo custom css */
+
+/* region lift. this class moves an object up a bit when it is hovered or focused */
+.lift {
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.lift:hover,
+.lift:focus {
+    transform: translate3d(0, -3px, 0);
+}
+
+.lift-lg:hover,
+.lift-lg:focus {
+    transform: translate3d(0, -5px, 0);
+}
+
+/* endregion */
+
+/* region navbar hover colors */
+/* how it works */
+.navbarLink1:hover {
+    border-bottom-color: #fcad26;
+    border-bottom-style: solid;
+    border-bottom-width: 1.9px;
+    padding-bottom: 4px;
+    transition-duration: .5s;
+}
+
+/* prices */
+.navbarLink2:hover {
+    border-bottom-color: #38c690;
+    border-bottom-style: solid;
+    border-bottom-width: 1.9px;
+    padding-bottom: 4px;
+    transition-duration: .5s;
+    transform-origin: left;
+}
+
+/* the Blog link always has an underlined purple, no hover action */
+.navbarLink3 {
+    border-bottom-color: #6F42C1;
+    border-bottom-style: solid;
+    padding-bottom: 4px;
+    border-bottom-width: 1.9px;
+}
+
+/* log in */
+.navbarLink4:hover {
+    border-bottom-color: #fcad26;
+    border-bottom-style: solid;
+    border-bottom-width: 1.9px;
+    padding-bottom: 4px;
+    transition-duration: .5s;
+    transform-origin: left;
+}
+
+/*endregion */
+
+/* region styling of "get started" button */
+
+.site-nav-right > ul > li:first-child > a {
+    background: #38c690;
+    border: 1px solid transparent;
+    color: #fff;
+    padding: 9px 30px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 9.6px;
+    -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
+    transition: box-shadow .25s ease, -webkit-transform .25s ease;
+    transition: box-shadow .25s ease, transform .25s ease;
+    transition: box-shadow .25s ease, transform .25s ease, -webkit-transform .25s ease;
+
+}
+.site-nav-right > ul > li:first-child > a:hover{
+    background: #30a87a;
+    box-shadow: none;
+}
+.site-nav-right > ul > li:first-child > a::after{content: none;}
+
+/* only on small screens/hamburger menu, add some top margin */
+@media (max-width: 900px) {
+    .navbarButton {
+        margin-top: 20px !important;
+    }
+}
+
+/* endregion */
+
+/* region log in */
+/* only on small screens/hamburger menu, add some padding to the bottom */
+@media (max-width: 900px) {
+    .navbarLink4Container {
+        padding-bottom: 15px;
+    }
+}
+/* endregion */
+
+/* region logo */
+
+/* only on large screens, add some top margin */
+@media (min-width: 900px) {
+    .site-nav-logo {
+        padding-top: 15px !important;
+    }
+}
+
+/* endregion */
+
+/* endregion */
