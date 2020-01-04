@@ -3144,9 +3144,9 @@ Usage (In Ghost editor):
     background: #38c690;
     border: 1px solid transparent;
     color: #fff;
-    padding: 10px 30px;
+    padding: 9px 30px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    border-radius: 0.6rem;
+    border-radius: 9.6px;
     -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
     transition: box-shadow .25s ease, -webkit-transform .25s ease;
     transition: box-shadow .25s ease, transform .25s ease;
