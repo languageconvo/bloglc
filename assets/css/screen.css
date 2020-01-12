@@ -366,7 +366,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     width: 141px;
     height: 47px;
-    margin-bottom: 12px;
 }
 
 /*.site-home-header .site-nav-logo {
@@ -3179,7 +3178,7 @@ Usage (In Ghost editor):
 /* only on large screens, add some top margin */
 @media (min-width: 900px) {
     .site-nav-logo {
-        padding-top: 15px !important;
+        padding-top: 8px !important;
     }
 }
 
