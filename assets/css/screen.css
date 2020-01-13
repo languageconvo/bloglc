@@ -247,7 +247,7 @@ body {
 @media (max-width: 900px) {
     /* padding for the homepage header */
     .site-home-header .site-header-content {
-        padding: 10px 55px 20px 55px;
+        padding: 80px 55px 20px 55px;
     }
 }
 
