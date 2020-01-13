@@ -65,10 +65,9 @@ body {
     flex-grow: 1;
 }
 
-/* Full width page blocks, margin is preffered for fixed position elements */
 .outer {
     position: relative;
-    margin: 0 5vw;
+    padding: 0 5vw;
 }
 
 /* Centered content container blocks with hack for fixed header width */
@@ -287,7 +286,6 @@ body {
     justify-content: space-between; /* horisontal aligment */
     align-items: center; /*vertical aligment */
     overflow: hidden;
-    height: 83px; /*increased menu vertical size to accomodate logo and text*/
     font-size: 1.7rem;
 }
 
