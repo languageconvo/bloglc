@@ -1,9 +1,9 @@
 {{#get "tags" limit="all"}}
-    <ul class="tags">
+    <select class="tags" onChange="window.location.href=this.value">
+	<option disabled value="filter">Filter by:</option>
+	<option selected value>Blog topics:</option>
         {{#foreach tags}}
-            <li class="tag">
-                <a href="{{url}}">{{name}}</a>
-            </li>
+            <option value="{{url}}">{{name}}</option>
         {{/foreach}}
-    </ul>
+    </select>
 {{/get}}

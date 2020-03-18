@@ -153,21 +153,22 @@ body {
 .site-header-content {
     z-index: 100;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 6vw 3vw;
     min-height: 200px;
     max-height: 340px;
+    flex-wrap: wrap;
 }
 
 .site-title {
     z-index: 10;
-    margin: 63px 0 -2px 0;
+    margin: 63px 0 20px;
     padding: 0;
     font-size: 5.0rem;
     line-height: 1em;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .site-logo {
@@ -197,18 +198,21 @@ body {
 
 /* padding for the homepage header */
 .site-home-header .site-header-content {
-    padding: 130px 55px 40px 55px;
+    padding: 60px 0px 40px;
 }
 
 .site-home-header .site-title {
     font-size: 5.5rem;
-    text-align: center;
+    text-align: start;
+    flex: 1 0 100%;
 }
 
 .site-home-header .site-description {
     font-size: 2.2rem;
     font-weight: 300;
+    flex: 0 1 80%;
 }
+.site-header-content > .tags{flex: 0 1 20%;}
 
 
 /* 4.2 Archive header (tag and author post lists)
@@ -617,7 +621,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
        .site-nav-right	{
           position: fixed;
 	  margin:0;
-	  top:185px; /*Empt sapce fix */
+	  top:185px; /*Empty space fix */
           background: #fff no-repeat 50%;
 	  width: 100%;
           left: 0;

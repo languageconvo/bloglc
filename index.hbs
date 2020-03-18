@@ -7,8 +7,9 @@ into the {body} of the default.hbs template --}}
         <div class="inner">
             {{> "site-nav"}}
             <div class="site-header-content">
-                <!-- removed title -->
+		<h1 class="site-title">{{@site.title}}</h1>
                 <h2 class="site-description">{{@site.description}}</h2>
+                {{> "site-tags"}}
             </div>
         </div>
     </div>
