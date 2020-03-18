@@ -617,12 +617,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
        .site-nav-right	{
           position: fixed;
 	  margin:0;
-	  top:203px; /*for now*/
+	  top:185px; /*Empt sapce fix */
           background: #fff no-repeat 50%;
 	  width: 100%;
           left: 0;
           justify-content: center;
 
+	}
+/* adjust paddings of menu items to main site*/
+	.nav li a{
+	  padding: 0.8rem 0;
 	}
 
 }
