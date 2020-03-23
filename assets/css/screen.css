@@ -212,7 +212,12 @@ body {
     font-weight: 300;
     flex: 0 1 80%;
 }
-.site-header-content > .tags{flex: 0 1 20%;}
+.site-header-content > .tags{
+    flex: 0 1 20%;
+    background-color: #edf1ea;
+    border: none;
+    border-radius: .6rem;
+}
 
 
 /* 4.2 Archive header (tag and author post lists)
@@ -962,8 +967,15 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 1.6rem;
     }
 }
-
-
+/* 6.1 Tag template
+/* ---------------------------------------------------------- */
+.tag-template .site-title {
+    flex: 1 0 100%;
+    margin: 20px 0;
+}
+.tag-template .site-description {
+    flex: 0 1 80%;
+}
 /* 7. Single Post
 /* ---------------------------------------------------------- */
 
