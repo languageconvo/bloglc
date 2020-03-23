@@ -1,8 +1,8 @@
 {{#get "tags" limit="all"}}
-    <select class="tags" onChange="window.location.href=this.value">
-        <option value="{{@site.url}}">Blog Home</option>
+    <select class="tags">
+        <option data-url="{{@site.url}}">Blog Home</option>
         {{#foreach tags}}
-        <option value="{{url}}">{{name}}</option>
+        <option data-url="{{url}}">{{name}}</option>
         {{/foreach}}
     </select>
 {{/get}}

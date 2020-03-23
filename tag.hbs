@@ -31,3 +31,27 @@
         </div>
     </div>
 </main>
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+	<script>
+		const select = document.querySelector(".tags");
+		const options = document.querySelectorAll(".tags option");
+ 
+		// 1
+		select.addEventListener("change", function() {
+		  let url = this.options[this.selectedIndex].dataset.url;
+		  if(url) {
+		    location.href = url;
+		  }
+		});
+ 
+		// 2
+		for(const option of options) {
+		  let url = option.dataset.url;
+		  if(location.pathname.includes(url)) {
+		    option.setAttribute("selected", true);	
+		    break;
+		  }
+		}
+	</script>
+{{/contentFor}}
