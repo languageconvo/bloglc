@@ -1,0 +1,8 @@
+{{#get "tags" limit="all"}}
+    <select class="tags">
+        <option data-url="{{@site.url}}">Blog Home</option>
+        {{#foreach tags}}
+        <option data-url="{{url}}" >{{name}}</option>
+        {{/foreach}}
+    </select>
+{{/get}}

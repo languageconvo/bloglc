@@ -7,8 +7,9 @@ into the {body} of the default.hbs template --}}
         <div class="inner">
             {{> "site-nav"}}
             <div class="site-header-content">
-                <!-- removed title -->
+		<h1 class="site-title">{{@site.title}}</h1>
                 <h2 class="site-description">{{@site.description}}</h2>
+                {{> "site-tags"}}
             </div>
         </div>
     </div>
@@ -34,4 +35,25 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
+	<script>
+		const select = document.querySelector(".tags");
+		const options = document.querySelectorAll(".tags option");
+ 
+		// 1
+		select.addEventListener("change", function() {
+		  let url = this.options[this.selectedIndex].dataset.url;
+		  if(url) {
+		    location.href = url;
+		  }
+		});
+ 
+		// 2
+		for(const option of options) {
+		  let url = option.dataset.url;
+		  if(location.pathname.includes(url)) {
+		    option.setAttribute("selected", "");
+		    break;
+		  }
+		}
+	</script>
 {{/contentFor}}
