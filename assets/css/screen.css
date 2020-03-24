@@ -3206,7 +3206,7 @@ Usage (In Ghost editor):
 }
 
 .site-home-header .site-description {
-    flex: 0 1 80%;
+    flex: 1 0 70%;
 }
 
 .site-header-content > .tags {
@@ -3255,7 +3255,7 @@ Usage (In Ghost editor):
 /* region tag page, hero section */
 
 .tag-template .site-description {
-    flex: 0 1 80%;
+    flex: 1 0 70%;
 }
 
 .tag-template .site-header-content >.tags {
