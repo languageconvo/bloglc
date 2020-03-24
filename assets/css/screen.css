@@ -158,7 +158,6 @@ body {
     align-items: center;
     padding: 6vw 3vw;
     min-height: 200px;
-    max-height: 340px;
     flex-wrap: wrap;
 }
 
@@ -207,19 +206,8 @@ body {
     flex: 1 0 100%;
 }
 
-/* region homepage tag dropdown */
-.home-template .site-header-content>.tags{
-    font-size: 20px;
-    padding: 8px 15px;
-}
-.site-header-content > .tags {
-    flex: 0 1 20%;
-    background-color: #edf1ea;
-    border: none;
-    border-radius: .6rem;
-    padding: 5px;
-    transition: all .5s ease-in-out;
-}
+/* region homepage site description and tag dropdown */
+
 /* fix for IE */
 .site-header-content >.tags::-ms-expand {
   display: none;
@@ -238,7 +226,6 @@ body {
 
 .site-archive-header .site-header-content {
     position: relative;
-    align-items: stretch;
     padding: 12vw 0 20px;
     min-height: 200px;
     max-height: 600px;
@@ -264,9 +251,9 @@ body {
 }
 
 
-/* Special header styles for smaller screens */
+/* Special hero styles for smaller screens */
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 501px) {
     /* padding for the homepage header */
     .site-home-header .site-header-content {
         padding: 80px 55px 20px 55px;
@@ -274,14 +261,6 @@ body {
 }
 
 @media (max-width: 500px) {
-    .site-home-header .site-title {
-        font-size: 3.2rem;
-    }
-
-    .site-home-header .site-description {
-        font-size: 1.8rem;
-    }
-
     .site-archive-header .site-header-content {
         min-height: unset;
     }
@@ -985,9 +964,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 .tag-template .site-title {
     flex: 1 0 100%;
     margin: 20px 0;
-}
-.tag-template .site-description {
-    flex: 0 1 80%;
 }
 /* 7. Single Post
 /* ---------------------------------------------------------- */
@@ -3217,20 +3193,117 @@ Usage (In Ghost editor):
 
 /* region homepage hero */
 
-/* on smaller screens (which have navbar toggler), center the title */
-@media (max-width: 900px) {
-    .site-home-header .site-title {
-        text-align: center;
+/* region widths of site description and tag dropdown */
+
+.home-template .site-header-content>.tags{
+    font-size: 20px;
+    font-weight: 300;
+    padding: 8px 15px;
+    transition: all .5s ease-in-out;
+    background-color: #edf1ea;
+    border: none;
+    border-radius: .6rem;
+}
+
+.site-home-header .site-description {
+    flex: 0 1 80%;
+}
+
+.site-header-content > .tags {
+    flex: 0 1 20%;
+}
+
+/* widths for medium screens */
+@media (max-width: 900px) and (min-width: 501px) {
+    .site-home-header .site-description {
+        flex: 0 1 100%;
+    }
+
+    .site-header-content > .tags {
+        flex: 0 1 50%;
     }
 }
 
-/* on smaller screens (which have navbar toggler), add top margin to the tags dropdown */
-@media (max-width: 900px) {
-    .home-template .site-header-content>.tags {
-        margin-top: 90px;
-        box-sizing: border-box;
+/* widths for small screens */
+@media (max-width: 500px) {
+    .site-home-header .site-description {
+        flex: 0 1 100%;
+    }
+
+    .site-header-content > .tags {
+        flex: 0 1 100%;
     }
 }
+
+/* endregion */
+
+/* on smaller screens (which have navbar toggler) ... */
+@media (max-width: 900px) {
+    /* center the title */
+    .site-home-header .site-title {
+        text-align: center;
+    }
+
+    /* add top margin to the tags dropdown */
+    .home-template .site-header-content>.tags {
+        margin-top: 25px;
+    }
+}
+
+/* endregion */
+
+/* region tag page, hero section */
+
+.tag-template .site-description {
+    flex: 0 1 80%;
+}
+
+.tag-template .site-header-content >.tags {
+    font-size: 20px;
+    font-weight: 300;
+    background-color: #edf1ea;
+    border: none;
+    border-radius: .6rem;
+    padding: 8px 15px;
+    transition: all .5s ease-in-out;
+}
+
+/* widths for medium screens */
+@media (max-width: 900px) and (min-width: 501px) {
+    .tag-template .site-description {
+        flex: 0 1 100%;
+    }
+
+    .tag-template .site-header-content >.tags {
+        flex: 0 1 50%;
+    }
+}
+
+/* widths for small screens */
+@media (max-width: 500px) {
+    .tag-template .site-description {
+        flex: 0 1 100%;
+    }
+
+    .tag-template .site-header-content >.tags {
+        flex: 0 1 100%;
+    }
+}
+
+/* on smaller screens (which have navbar toggler) ... */
+@media (max-width: 900px) {
+    /* center the title */
+    .tag-template .site-title {
+        text-align: center;
+    }
+
+    /* add top margin to the tag dropdown */
+    .tag-template .site-header-content>.tags {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+}
+
 /* endregion */
 
 /* endregion */
