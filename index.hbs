@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
  
 		// 1
 		select.addEventListener("change", function() {
-		  const url = this.options[this.selectedIndex].dataset.url;
+		  let url = this.options[this.selectedIndex].dataset.url;
 		  if(url) {
 		    location.href = url;
 		  }
@@ -49,8 +49,8 @@ into the {body} of the default.hbs template --}}
  
 		// 2
 		for(const option of options) {
-		  const url = option.dataset.url;
-		  if(location.href.includes(url)) {
+		  let url = option.dataset.url;
+		  if(location.pathname.includes(url)) {
 		    option.setAttribute("selected", "");
 		    break;
 		  }

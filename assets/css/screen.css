@@ -212,24 +212,25 @@ body {
     font-weight: 300;
     flex: 0 1 80%;
 }
-.site-header-content > .tags{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+.home-template .site-header-content>.tags{
+    padding: 8px 5px;     
+}
+.site-header-content > .tags {
     flex: 0 1 20%;
     background-color: #edf1ea;
     border: none;
     border-radius: .6rem;
+    padding: 5px;
     transition: all .5s ease-in-out;
 }
-/*fix for IE*/
+/* fix for IE */
 .site-header-content >.tags::-ms-expand {
   display: none;
 }
  
 .site-header-content >.tags:focus {
   outline: 0;
-  border-color: #7bbaff;
+  border-color: #eff2eb;
   box-shadow: 0 0 0 3px rgba(0, 121, 250, .3);
 }
 
