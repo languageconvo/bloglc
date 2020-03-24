@@ -166,7 +166,7 @@ body {
     z-index: 10;
     margin: 63px 0 20px;
     padding: 0;
-    font-size: 5.0rem;
+    font-size: 30px;
     line-height: 1em;
     font-weight: 400;
 }
@@ -202,18 +202,15 @@ body {
 }
 
 .site-home-header .site-title {
-    font-size: 5.5rem;
+    font-size: 30px;
     text-align: start;
     flex: 1 0 100%;
 }
 
-.site-home-header .site-description {
-    font-size: 2.2rem;
-    font-weight: 300;
-    flex: 0 1 80%;
-}
+/* region homepage tag dropdown */
 .home-template .site-header-content>.tags{
-    padding: 8px 5px;     
+    font-size: 20px;
+    padding: 8px 15px;
 }
 .site-header-content > .tags {
     flex: 0 1 20%;
@@ -227,12 +224,13 @@ body {
 .site-header-content >.tags::-ms-expand {
   display: none;
 }
- 
+
 .site-header-content >.tags:focus {
   outline: 0;
   border-color: #eff2eb;
   box-shadow: 0 0 0 3px rgba(0, 121, 250, .3);
 }
+/* endregion */
 
 
 /* 4.2 Archive header (tag and author post lists)
@@ -937,7 +935,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-title {
         margin-top: 0;
-        font-size: 3.2rem;
+        font-size: 26px;
     }
 
     .post-card-large .post-card-content-link {
@@ -3215,6 +3213,24 @@ Usage (In Ghost editor):
     }
 }
 
+/* endregion */
+
+/* region homepage hero */
+
+/* on smaller screens (which have navbar toggler), center the title */
+@media (max-width: 900px) {
+    .site-home-header .site-title {
+        text-align: center;
+    }
+}
+
+/* on smaller screens (which have navbar toggler), add top margin to the tags dropdown */
+@media (max-width: 900px) {
+    .home-template .site-header-content>.tags {
+        margin-top: 90px;
+        box-sizing: border-box;
+    }
+}
 /* endregion */
 
 /* endregion */
