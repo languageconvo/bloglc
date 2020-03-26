@@ -113,7 +113,7 @@ body {
 
 .site-header-background {
     position: relative;
-    margin-top: 64px;
+    margin-top: 60px;
     padding-bottom: 12px;
     color: color(var(--darkgrey) l(-5%));
     background: #fff no-repeat center center;
@@ -177,7 +177,7 @@ body {
 .site-description {
     z-index: 10;
     margin: 0;
-    padding: 5px 0;
+    padding-bottom: 20px;
     font-size: 2.1rem;
     line-height: 1.4em;
     font-weight: 400;
@@ -239,14 +239,9 @@ body {
     opacity: 1.0;
 }
 
-.site-archive-header .no-image .site-description {
-    color: var(--midgrey);
-    opacity: 1.0;
-}
-
 
 .site-archive-header .no-image .site-header-content {
-    padding: 5vw 0 10px;
+    padding: 0;
     border-bottom: 1px solid color(var(--lightgrey) l(+12%));
 }
 
@@ -963,7 +958,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 .tag-template .site-title {
     flex: 1 0 100%;
-    margin: 20px 0;
 }
 /* 7. Single Post
 /* ---------------------------------------------------------- */
@@ -3207,6 +3201,7 @@ Usage (In Ghost editor):
 
 .site-home-header .site-description {
     flex: 1 0 70%;
+    padding-right: 30px;
 }
 
 .site-header-content > .tags {
@@ -3257,6 +3252,7 @@ Usage (In Ghost editor):
 
 .tag-template .site-description {
     flex: 1 0 70%;
+    padding-right: 30px;
 }
 
 .tag-template .site-header-content >.tags {
