@@ -80,19 +80,16 @@ a, p {
 /* Centered content container blocks with hack for fixed header width */
 .inner {
     margin: 0 auto;
-    max-width: 1040px;
+    max-width: 1220px;
     width: 100%;
 }
-
-/* Usage:
-
-<div class="outer">
-    <div class="inner">
-        Centered content
-    </div>
-</div>
-
-*/
+.site-nav {
+    position: fixed;
+    background: #fff;
+    padding: 1rem 15px;
+    width:100%; /*need those cuz of fixed positioning */
+    max-width: 1220px;
+}
 
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
@@ -104,13 +101,6 @@ a, p {
         padding: 40px 0 5vw;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-    }
-
-    .home-template .site-nav {
-        position: fixed;
-	background: #fff;
-	width: 90%;
-	max-width: 1040px;
     }
 }
 
@@ -198,13 +188,15 @@ a, p {
     z-index: 1000;
 }
 
+
 .site-home-header .site-header-background {
     margin-top: 0;
+    padding: 0;
 }
 
 /* padding for the homepage header */
 .site-home-header .site-header-content {
-    padding: 60px 0px 40px;
+    padding: 60px 5vw 40px;
 }
 
 .site-home-header .site-title {
@@ -224,6 +216,10 @@ a, p {
   border-color: #eff2eb;
   box-shadow: 0 0 0 3px rgba(0, 121, 250, .3);
 }
+@media (min-width: 992px) and (max-width: 1260px) {
+   header {padding: 0 16px;}
+   .inner>.site-nav {width: calc(100vw - 49px);}
+ }
 /* endregion */
 
 
@@ -282,7 +278,6 @@ a, p {
 }
 
 .site-nav {
-    position: relative;
     z-index: 100;
     display: flex;
     justify-content: space-between; /* horisontal aligment */
@@ -291,7 +286,6 @@ a, p {
 }
 
 .site-nav-left-wrapper {
-    position: relative;
     flex: 1 0 auto;
     display: flex;
     order: 0;
@@ -310,7 +304,6 @@ a, p {
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-/*    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%); */
     background: transparent;
 }
 
@@ -321,38 +314,24 @@ a, p {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
     font-weight: 400;
-    letter-spacing: 0.2px;
- /*    text-transform: uppercase;*/
     white-space: nowrap;
-
     -ms-overflow-scrolling: touch;
 }
-
+/* To take dropdown arrow into account */
 .site-nav-left .nav li:last-of-type {
-    padding-right: 20px;
+    padding-right: 2px;
 }
 
 /* Site Nav Hack Explanation (above):
-
 What's happening above is .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them. Also, there is a small gradient on the left and right side covering the menu so that the menu goes offscreen smoothly.
-
 The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px of padding-bottom and a 40px fixed height parent (.site-nav) hides that entirely. Slightly hacky code. But nice clean end-result.
-
+Logo styles cleaned to image
 */
 .site-nav-logo {
     position: relative;
-    z-index: 100;
-    flex-shrink: 0;
-    display: inline-block;
+    z-index: 10;
     padding: 0.425rem 0;
-    margin-right: 1rem;
-    color: #fff;
-    line-height: 1.8rem;
-    font-weight: bold;
-    letter-spacing: -0.5px;
-    text-transform: none;
 }
 
 .site-nav-logo:hover {
@@ -365,10 +344,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 47px;
 }
 
-/*.site-home-header .site-nav-logo {
-    display: none;
-} Why hide logo in navbar ? */
-
 .site-nav-content {
     margin-left: auto; /*flex feature to stick items to the right of parent container */
 }
@@ -377,26 +352,26 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     z-index: 1000;
     display: flex;
+    align-items: center;
     padding: 0;
     margin: 0;
     list-style: none;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
-
 }
 
 .nav li {
     display: block;
     margin: 0;
-/*    padding: 12px 1.7rem 4px 1.7rem;*/
+    padding: 0;
 }
 
 .nav li a {
     position: relative;
     display: block;
-    padding: 12px 0 4px;
+    padding: .5rem 0;
     margin: 0 1.7rem;
+    font-size: 1.05rem;
     color: #887f95;
-    opacity: 0.8;
     transition: opacity 0.35s ease-in-out;
 }
 
@@ -3139,9 +3114,12 @@ Usage (In Ghost editor):
     background: #38c690;
     border: 1px solid transparent;
     color: #fff;
-    padding: 9px 30px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    padding: 10px 30px;
+    margin: 0;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    border-radius: 9.6px;
+    border-radius: .6rem;
     -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
     transition: box-shadow .25s ease, -webkit-transform .25s ease;
     transition: box-shadow .25s ease, transform .25s ease;
@@ -3150,7 +3128,6 @@ Usage (In Ghost editor):
 }
 .site-nav-right > ul > li:first-child > a:hover{
     background: #30a87a;
-    box-shadow: none;
 }
 .site-nav-right > ul > li:first-child > a::after{content: none;}
 
@@ -3171,12 +3148,6 @@ Usage (In Ghost editor):
     }
 }
 /* endregion */
-
-/* region logo */
-
-/* endregion */
-
-/* region homepage hero */
 
 /* region widths of site description and tag dropdown */
 
@@ -3291,7 +3262,5 @@ Usage (In Ghost editor):
         margin-bottom: 20px;
     }
 }
-
-/* endregion */
 
 /* endregion */
