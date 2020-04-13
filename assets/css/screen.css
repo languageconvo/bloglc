@@ -564,14 +564,16 @@ Logo styles cleaned to image
       width: 1.65rem;
       height: 1.65rem;
       line-height: 1;
-      border-radius: .3rem;
-      border-color: rgba(0,0,0,.1);
       cursor: pointer;
 	}
-/* toggle menu visiility upon hamburger click */
+/* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective */
    .site-nav > div > div > div {display:none;}
    .site-nav .site-nav-right > ul > li {display:none;}
-   .site-nav #menu-toggle:checked ~ div > div > div {display:block;}
+   .site-nav #menu-toggle:checked ~ div > div > div {
+     display: flex;
+     width: 100%;
+     background: pink;
+   }
    .site-nav #menu-toggle:checked ~ .site-nav-right > ul > li {display:block;}
 /* accomodate menu to stick to the left side */
    .nav { flex-direction: column;}
@@ -595,12 +597,12 @@ Logo styles cleaned to image
    }
    .site-nav-right	{
      position: fixed;
-	   margin:0;
-	   top:185px; /*Empty space fix */
-     background: #fff no-repeat 50%;
-	   width: 100%;
+	   margin:0 15px;
+	   top:222px; /*Empty space fix */
+     background: pink no-repeat 100%;
+	   width: calc(100% - 30px);
      left: 0;
-     justify-content: center;
+     justify-content: flex-start;
 	 }
 /* adjust paddings of menu items to main site*/
 	.nav li a{
