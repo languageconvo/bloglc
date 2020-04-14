@@ -196,7 +196,7 @@ a, p {
 
 /* padding for the homepage header */
 .site-home-header .site-header-content {
-    padding: 60px 5vw 40px;
+    padding: 60px 0 40px;
 }
 
 .site-home-header .site-title {
@@ -1024,7 +1024,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     align-items: center;
     overflow: hidden;
     margin: 25px 0 50px;
-    background: color(var(--lightgrey) l(+10%));
+    background: #fff;
     border-radius: 3px;
 }
 
