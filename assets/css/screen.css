@@ -217,7 +217,7 @@ a, p {
   box-shadow: 0 0 0 3px rgba(0, 121, 250, .3);
 }
 @media (min-width: 992px) and (max-width: 1260px) {
-   header {padding: 0 16px;}
+   .site-wrapper > header {padding: 0 16px;}
    .inner>.site-nav {width: calc(100vw - 49px);}
  }
 /* endregion */
@@ -566,17 +566,23 @@ Logo styles cleaned to image
       line-height: 1;
       cursor: pointer;
 	}
-/* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective */
+/* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective, since it's divide into
+two parts we use individual border radiuses and paddings for each of them */
    .site-nav > div > div > div {display:none;}
-   .site-nav .site-nav-right > ul > li {display:none;}
+   .site-nav .site-nav-right {display:none;}
    .site-nav #menu-toggle:checked ~ div > div > div {
      display: flex;
      width: 100%;
-     background: pink;
+     background: rgba(111,66,194,.2);
+     border-radius: .6rem .6rem 0 0;
+     margin-top: 20px;
+     padding: 20px 20px 15px;
    }
-   .site-nav #menu-toggle:checked ~ .site-nav-right > ul > li {display:block;}
+   .site-nav #menu-toggle:checked ~ .site-nav-right {display:flex;}
+/* We need to specify height exlicitly since second part of menu is display:fixed */
+   .site-nav #menu-toggle:checked ~ .site-nav-left-wrapper {height: 320px;}
 /* accomodate menu to stick to the left side */
-   .nav { flex-direction: column;}
+   .site-nav-right .nav { flex-direction: row;}
    .site-nav-left-wrapper{
 	    position: fixed;
 	    top:0;
@@ -584,8 +590,9 @@ Logo styles cleaned to image
 	    background: #fff no-repeat 50%;
       width: 100%;
    }
-    li.nav-log-in > a   {padding: 12px 18px 4px;}
-   .site-nav-left{flex-direction: column;}
+   .nav li.nav-log-in > a   {padding: 6px 1.7rem 10px;}
+   .site-nav-left ul{flex-direction: column;}
+   .site-nav-left .nav li{width:100%;}
    .site-nav-content {margin:0;}
    .site-nav-left {
 	    flex-direction: column;
@@ -597,16 +604,20 @@ Logo styles cleaned to image
    }
    .site-nav-right	{
      position: fixed;
-	   margin:0 15px;
-	   top:222px; /*Empty space fix */
-     background: pink no-repeat 100%;
-	   width: calc(100% - 30px);
+	   margin:0 16px;
+	   top:247px; /*Empty space fix */
+     background: rgba(111,66,194,.2) no-repeat 100%;
+	   width: calc(100% - 32px);
      left: 0;
      justify-content: flex-start;
+     border-radius: 0 0 .6rem .6rem;
+     padding: 0 20px 25px;
 	 }
 /* adjust paddings of menu items to main site*/
 	.nav li a{
-	  padding: 0.8rem 0;
+	  padding: .5rem 1.7rem;
+    margin: 0;
+    line-height: 1.5;
 	}
 }
 /* 6. Post Feed
@@ -3111,7 +3122,9 @@ Usage (In Ghost editor):
 
 .site-nav-right > ul > li:first-child > a {
     background: #38c690;
-    border: 1px solid transparent;
+    border: 1px solid #38c690;
+    display: inline-block;
+    vertical-align: middle;
     color: #fff;
     font-size: 1.05rem;
     line-height: 1.5;
@@ -3129,13 +3142,6 @@ Usage (In Ghost editor):
     background: #30a87a;
 }
 .site-nav-right > ul > li:first-child > a::after{content: none;}
-
-/* only on small screens/hamburger menu, add some top margin */
-@media (max-width: 900px) {
-    .navbarButton {
-        margin-top: 20px !important;
-    }
-}
 
 /* endregion */
 
@@ -3161,7 +3167,7 @@ Usage (In Ghost editor):
 }
 
 .site-home-header .site-description {
-    flex: 1 0 70%;
+    flex: 1 0 60%;
     padding-right: 30px;
 }
 
