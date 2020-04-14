@@ -216,9 +216,10 @@ a, p {
   border-color: #eff2eb;
   box-shadow: 0 0 0 3px rgba(0, 121, 250, .3);
 }
-@media (min-width: 992px) and (max-width: 1260px) {
+@media (min-width: 901px) and (max-width: 1260px) {
    .site-wrapper > header {padding: 0 16px;}
    .inner>.site-nav {width: calc(100vw - 49px);}
+   .site-home-header .site-header-content{padding: 60px 55px 40px;}
  }
 /* endregion */
 
@@ -261,6 +262,9 @@ a, p {
     .site-archive-header .site-header-content {
         min-height: unset;
     }
+    .site-home-header .site-header-content {
+        padding: 80px 5vw 20px 5vw;
+    }
 }
 
 
@@ -285,14 +289,14 @@ a, p {
     overflow: hidden;
 }
 
-.site-nav-left-wrapper {
+.site-nav-wrapper {
     flex: 1 0 auto;
     display: flex;
     order: 0;
 }
 
-.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
-.site-nav-main .site-nav-left-wrapper:after {
+.site-header-background:not(.responsive-header-img) .site-nav-wrapper:after,
+.site-nav-main .site-nav-wrapper:after {
     content: "";
     position: absolute;
     top: 0;
@@ -301,8 +305,8 @@ a, p {
     height: 0;
 }
 
-.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
-.site-nav-main .site-nav-left-wrapper:after {
+.site-header-background:not(.responsive-header-img) .site-nav-wrapper:after,
+.site-nav-main .site-nav-wrapper:after {
     right: 0;
     background: transparent;
 }
@@ -560,33 +564,36 @@ Logo styles cleaned to image
       font-style: normal;
 	    font-size: 1.1rem;
       content: "";
-      z-index: 10;
+      z-index: 100;
       width: 1.65rem;
       height: 1.65rem;
       line-height: 1;
       cursor: pointer;
 	}
+.site-nav{
+     padding: 1rem 1rem 0;
+     flex-direction: column;
+   }
+
 /* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective, since it's divide into
 two parts we use individual border radiuses and paddings for each of them */
-   .site-nav > div > div > div {display:none;}
-   .site-nav .site-nav-right {display:none;}
-   .site-nav #menu-toggle:checked ~ div > div > div {
+   .site-nav > div {display:none;}
+   .site-nav #menu-toggle:checked ~ div {
      display: flex;
+     flex: 1 0 100%;
      width: 100%;
      background: rgba(111,66,194,.2);
-     border-radius: .6rem .6rem 0 0;
-     margin-top: 20px;
+     border-radius: .6rem;
+     margin: 1.25rem 0 .5rem;
      padding: 20px 20px 15px;
+     flex-direction: column;
    }
    .site-nav #menu-toggle:checked ~ .site-nav-right {display:flex;}
 /* We need to specify height exlicitly since second part of menu is display:fixed */
-   .site-nav #menu-toggle:checked ~ .site-nav-left-wrapper {height: 320px;}
+   .site-nav #menu-toggle:checked ~ .site-nav-wrapper {display:flex;}
 /* accomodate menu to stick to the left side */
    .site-nav-right .nav { flex-direction: row;}
-   .site-nav-left-wrapper{
-	    position: fixed;
-	    top:0;
-	    left: 0;
+   .site-nav-wrapper{
 	    background: #fff no-repeat 50%;
       width: 100%;
    }
@@ -595,23 +602,23 @@ two parts we use individual border radiuses and paddings for each of them */
    .site-nav-left .nav li{width:100%;}
    .site-nav-content {margin:0;}
    .site-nav-left {
-	    flex-direction: column;
-	    margin: 0;
-	    padding: .5rem 1rem;
+	   flex-direction: column;
+	   margin: 0;
+	   padding: 0;
+     flex: 1 0 100%;
+     align-items: flex-start;
 	 }
    .site-nav-logo {
-       align-self: flex-start;
+     align-self: flex-start;
+     flex: 1 0 100%;
+     margin-top: -0.5rem;
    }
    .site-nav-right	{
-     position: fixed;
-	   margin:0 16px;
-	   top:247px; /*Empty space fix */
-     background: rgba(111,66,194,.2) no-repeat 100%;
-	   width: calc(100% - 32px);
-     left: 0;
+	   margin:0;
      justify-content: flex-start;
      border-radius: 0 0 .6rem .6rem;
-     padding: 0 20px 25px;
+     padding: 15px 0 10px;
+     flex: 1 0 100%;
 	 }
 /* adjust paddings of menu items to main site*/
 	.nav li a{
