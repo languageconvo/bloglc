@@ -1,15 +1,14 @@
 <nav class="site-nav">
 {{!--  hamburger nav --}}
-    <label for="menu-toggle">&#9776;</label>
+    <label for="menu-toggle"></label>
     <input type="checkbox" id="menu-toggle">
-
-    <div class="site-nav-left-wrapper">
+    {{#if @site.logo}}
+        <a class="site-nav-logo" href="https://www.languageconvo.com/"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+    {{else}}
+        <a class="site-nav-logo" href="https://www.languageconvo.com/">{{@site.title}}</a>
+    {{/if}}   
+    <div class="site-nav-wrapper">
         <div class="site-nav-left">
-            {{#if @site.logo}}
-                <a class="site-nav-logo" href="https://www.languageconvo.com/"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-            {{else}}
-                <a class="site-nav-logo" href="https://www.languageconvo.com/">{{@site.title}}</a>
-            {{/if}}
             {{!-- removed handlebars and hardcoded --}}
             <div class="site-nav-content">
                 <ul class="nav" role="menu">
@@ -19,13 +18,12 @@
                 </ul>
             </div>
         </div>
+        <div class="site-nav-right">
+            {{!-- removed handlebars and hardcoded --}}
+            <ul class="nav" role="menu">
+                <li class="nav-get-started nav-current navbarButton lift" role="menuitem"><a href="https://www.languageconvo.com/en/free-trial/">Get Started</a></li>
+                <li class="nav-log-in nav-current navbarLink4Container" role="menuitem"><a href="https://www.languageconvo.com/studenthome/"><span class="navbarLink4">Log In</span></a></li>
+            </ul>
+        </div>
     </div>
-    <div class="site-nav-right">
-        {{!-- removed handlebars and hardcoded --}}
-        <ul class="nav" role="menu">
-            <li class="nav-get-started nav-current navbarButton lift" role="menuitem"><a href="https://www.languageconvo.com/en/free-trial/">Get Started</a></li>
-            <li class="nav-log-in nav-current navbarLink4Container" role="menuitem"><a href="https://www.languageconvo.com/studenthome/"><span class="navbarLink4">Log In</span></a></li>
-        </ul>
-    </div>
-
 </nav>

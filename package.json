@@ -2,7 +2,7 @@
     "name": "bloglc",
     "description": "A clean, minimal default theme for the Ghost publishing platform. Customized for LanguageConvo.",
     "demo": "https://demo.ghost.io",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
