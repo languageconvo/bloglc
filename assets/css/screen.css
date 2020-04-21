@@ -204,6 +204,12 @@ a, p {
     flex: 1 0 100%;
 }
 
+@media (min-width: 901px) {
+    .site-title {
+        margin-top: 140px;
+    }
+}
+
 /* region homepage site description and tag dropdown */
 
 /* fix for IE */
