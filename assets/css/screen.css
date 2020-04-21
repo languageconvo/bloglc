@@ -205,7 +205,7 @@ a, p {
 }
 
 @media (min-width: 901px) {
-    .site-home-header .site-title {
+    .site-title {
         margin-top: 140px;
     }
 }
