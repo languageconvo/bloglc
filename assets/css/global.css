@@ -413,6 +413,7 @@ blockquote cite a {
 a {
     color: color(var(--blue) l(-5%));
     text-decoration: none;
+    font-weight: 400;
 }
 
 a:hover {
@@ -434,7 +435,7 @@ h6 {
 h1 {
     margin: 0 0 0.5em 0;
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 @media (max-width: 500px) {
     h1 {
@@ -444,18 +445,14 @@ h1 {
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 2.2rem;
-}
-@media (max-width: 500px) {
-    h2 {
-        font-size: 1.8rem;
-    }
+    font-size: 1.6rem;
+    font-weight: 400;
 }
 
 h3 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 1.7rem;
+    font-weight: 400;
 }
 @media (max-width: 500px) {
     h3 {
