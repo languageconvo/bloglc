@@ -38,7 +38,7 @@ body {
     font-family: -apple-system,BlinkMacSystemFont, "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
     line-height: 1.5;
 }
-a, p {
+p {
   font-size: 1.25rem;
 }
 
@@ -112,7 +112,6 @@ a, p {
     position: relative;
     margin-top: 60px;
     padding-bottom: 12px;
-    color: color(var(--darkgrey) l(-5%));
     background: #fff no-repeat center center;
     background-size: cover;
 }
@@ -162,9 +161,6 @@ a, p {
     z-index: 10;
     margin: 63px 0 20px;
     padding: 0;
-    font-size: 31px;
-    line-height: 1em;
-    font-weight: 400;
 }
 
 .site-logo {
@@ -174,11 +170,10 @@ a, p {
 .site-description {
     z-index: 10;
     margin: 0;
-    padding-bottom: 20px;
     font-size: 1.25rem;
     line-height: 1.4em;
     font-weight: 400;
-    opacity: 0.8;
+    color: #738a94;
 }
 
 /* 4.1 Home header
@@ -250,8 +245,10 @@ a, p {
 
 
 .site-archive-header .no-image .site-header-content {
-    padding: 0;
-    border-bottom: 1px solid color(var(--lightgrey) l(+12%));
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 50px;
 }
 
 
@@ -725,7 +722,7 @@ two parts we use individual border radiuses and paddings for each of them */
 .post-card-excerpt {
     max-width: 56em;
     color: var(--midgrey);
-    font-family: Georgia, serif;
+    font-family: -apple-system,BlinkMacSystemFont, "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .post-card-excerpt p {
@@ -944,15 +941,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
-@media (max-width: 500px) {
-    .post-card-title {
-        font-size: 1.2rem;
-    }
 
-    .post-card-excerpt {
-        font-size: 1rem;
-    }
-}
 /* 6.1 Tag template
 /* ---------------------------------------------------------- */
 .tag-template .site-title {
@@ -982,8 +971,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: var(--midgrey);
     font-size: .75rem;
     line-height: 1.4em;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 400;
 }
 
 .post-full-meta-date {
@@ -1019,7 +1007,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-custom-excerpt {
     margin: 20px 0 0;
     color: var(--midgrey);
-    font-family: Georgia, serif;
+    font-family: -apple-system,BlinkMacSystemFont, "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.4rem;
     line-height: 1.4em;
     font-weight: 300;
@@ -1065,13 +1053,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 @media (max-width: 800px) {
     .post-full-content {
         padding: 0 5vw;
-        font-size: 1rem;
-    }
-}
-@media (max-width: 500px) {
-    .post-full-custom-excerpt {
-        font-size: 1.2rem;
-        line-height: 1.5em;
     }
 }
 
@@ -1318,17 +1299,9 @@ Usage (In Ghost editor):
     margin: 0.5em 0 0.4em;
     font-size: 2rem;
     line-height: 1.25em;
-    font-weight: 600;
 }
 .post-full-content p + h2 {
     margin-top: 0.8em;
-}
-@media (max-width: 800px) {
-    .post-full-content h2 {
-        margin-bottom: 0.3em;
-        font-size: 1.2rem;
-        line-height: 1.25em;
-    }
 }
 
 .post-full-content h3 {
@@ -1373,7 +1346,7 @@ Usage (In Ghost editor):
     padding: 0.4em 1em 0.9em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
+    font-family: -apple-system,BlinkMacSystemFont, "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1451,8 +1424,7 @@ Usage (In Ghost editor):
     }
 
     .post-full-title {
-        margin-top: 0.2em;
-        font-size: 2rem;
+        margin-top: 40px;
     }
 
     .post-full-image {
@@ -1959,17 +1931,10 @@ Usage (In Ghost editor):
 .read-next-card-header h3 {
     margin: 0;
     color: rgba(255, 255, 255, 0.95);
-    font-size: .75rem;
-    line-height: 1em;
-    font-weight: 300;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
 }
 
 .read-next-card-header h3 a {
     color: #fff;
-    font-weight: 500;
-    text-decoration: none;
     opacity: 0.8;
 }
 
@@ -2005,7 +1970,7 @@ Usage (In Ghost editor):
 
 .read-next-card-content h4 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.35em;
     font-weight: 600;
 }
@@ -2714,7 +2679,7 @@ Usage (In Ghost editor):
     margin: 0 auto 50px;
     max-width: 650px;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: -apple-system,BlinkMacSystemFont, "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.5rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -3185,8 +3150,15 @@ Usage (In Ghost editor):
 }
 
 .site-header-content > .tags {
-    flex: 0 1 20%;
+    flex: 0 1 25%;
     width: 100%;
+}
+
+/* for large screens */
+@media (min-width: 991px) {
+    .site-home-header .site-description {
+        padding-right: 140px;
+    }
 }
 
 /* widths for medium screens */
@@ -3231,8 +3203,15 @@ Usage (In Ghost editor):
 /* region tag page, hero section */
 
 .tag-template .site-description {
-    flex: 1 0 70%;
+    flex: 1 0 60%;
     padding-right: 30px;
+}
+
+/* for large screens */
+@media (min-width: 991px) {
+    .tag-template .site-description {
+        padding-right: 140px;
+    }
 }
 
 .tag-template .site-header-content >.tags {
