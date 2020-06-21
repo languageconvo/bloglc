@@ -671,14 +671,15 @@ two parts we use individual border radiuses and paddings for each of them */
     object-fit: cover;
 }
 
+/* blog homepage links */
 .post-card-content-link {
     position: relative;
     display: block;
-    color: var(--darkgrey);
+    color: var(--darkgrey) !important;
 }
 
 .post-card-content-link:hover {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .post-card-header {
@@ -1179,7 +1180,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    border-left: var(--purple) 3px solid;
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
