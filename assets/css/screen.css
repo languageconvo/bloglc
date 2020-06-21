@@ -1102,16 +1102,14 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a {
-    color: var(--darkgrey);
+    color: var(--primary);
     word-break: break-word;
-    box-shadow: var(--darkgrey) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
-    text-decoration: none;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    color: color(var(--primary) l(-15%));
+    text-decoration: underline;
 }
 
 .post-full-content strong,
@@ -1213,10 +1211,7 @@ Usage (In Ghost editor):
 .post-full-content p code {
     word-break: break-all;
 }
-/* Little trick to hide automatically added empty paragraphs for CTA only*/
-.post-full-content #-get-started- + p {
-    display: none;
-}
+
 .post-full-content pre {
     overflow-x: auto;
     margin: 1.5em 0 3em;
