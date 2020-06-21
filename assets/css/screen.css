@@ -1212,6 +1212,11 @@ Usage (In Ghost editor):
     word-break: break-all;
 }
 
+/* Little trick to hide automatically added empty paragraphs for CTA only*/
+.post-full-content #-get-started- + p {
+    display: none;
+}
+
 .post-full-content pre {
     overflow-x: auto;
     margin: 1.5em 0 3em;
