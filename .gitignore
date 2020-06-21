@@ -1,3 +1,6 @@
+# build css and js are not needed
+assets/built/
+
 b-cov
 *.seed
 *.log
