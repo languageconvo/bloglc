@@ -614,6 +614,7 @@ two parts we use individual border radiuses and paddings for each of them */
    .site-nav-logo {
      align-self: flex-start;
      flex: 1 0 100%;
+     margin-top: -0.5rem;
    }
    .site-nav-right	{
 	   margin:0;
