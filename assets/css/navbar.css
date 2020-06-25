@@ -1,21 +1,31 @@
 /* Site Navigation
 /* ---------------------------------------------------------- */
-
-.site-nav-main {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1000;
-    background: #fff; /* color(var(--darkgrey) l(-5%)); */
-}
-
 .site-nav {
     z-index: 100;
     display: flex;
+    position: fixed;
+    top: 0;
+    width:100%;
+    background: #fff;
+    padding: 1rem;
+    width:100%;
+}
+.site-nav-container{
+    margin: 0 auto;
     justify-content: space-between; /* horisontal aligment */
     align-items: center; /*vertical aligment */
     overflow: hidden;
+    flex: 0 1 1220px; /* since it's flex item we avoid using max-width and instead shrink it from 1220px*/
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+    
+}
+
+
+.site-nav-main {
+    z-index: 1000;
+    background: #fff; /* color(var(--darkgrey) l(-5%)); */
 }
 
 .site-nav-wrapper {
@@ -54,6 +64,10 @@
 /* To take dropdown arrow into account */
 .site-nav-left .nav li:last-of-type {
     padding-right: 2px;
+}
+/* For get started button */
+.shadow{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
 /* Site Nav Hack Explanation (above):
@@ -324,7 +338,7 @@ two parts we use individual border radiuses and paddings for each of them */
    .site-nav-right .nav { flex-direction: row;}
    .site-nav-wrapper{
 	    background: #fff no-repeat 50%;
-      width: 100%;
+        width: 100%;
    }
    .nav li.nav-log-in > a   {padding: 6px 1.7rem 10px;}
    .site-nav-left ul{flex-direction: column;}
@@ -338,20 +352,38 @@ two parts we use individual border radiuses and paddings for each of them */
      align-items: flex-start;
 	 }
    .site-nav-logo {
-     align-self: flex-start;
-     flex: 1 0 100%;
+      align-self: flex-start;
+      flex: 1 0 100%;
    }
    .site-nav-right	{
 	   margin:0;
-     justify-content: flex-start;
-     border-radius: 0 0 .6rem .6rem;
-     padding: 15px 0 10px;
-     flex: 1 0 100%;
+       justify-content: flex-start;
+       border-radius: 0 0 .6rem .6rem;
+       padding: 15px 0 10px;
+       flex: 1 0 100%;
 	 }
 /* adjust paddings of menu items to main site*/
 	.nav li a{
 	  padding: .5rem 1.7rem;
-    margin: 0;
-    line-height: 1.5;
+      margin: 0;
+      line-height: 1.5;
 	}
+}
+/* get started button */
+   li.nav-get-started > a.navbarButton {
+     background: #38c690;
+     border: 1px solid #38c690;
+     display: inline-block;
+     vertical-align: middle;
+     color: #fff;
+     font-size: 1.05rem;
+     line-height: 1.5;
+     padding: 10px 30px;
+     margin: 0;
+     border-radius: .6rem;
+     -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
+     transition: box-shadow .25s ease, -webkit-transform .25s ease;
+     transition: box-shadow .25s ease, transform .25s ease;
+     transition: box-shadow .25s ease, transform .25s ease, -webkit-transform .25s ease;
+
 }

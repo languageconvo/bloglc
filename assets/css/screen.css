@@ -84,13 +84,6 @@ p {
     max-width: 1220px;
     width: 100%;
 }
-.site-nav {
-    position: fixed;
-    background: #fff;
-    padding: 1rem 15px;
-    width:100%; /*need those cuz of fixed positioning */
-    max-width: 1220px;
-}
 
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
@@ -219,7 +212,6 @@ p {
   box-shadow: 0 0 0 3px rgba(0, 121, 250, .3);
 }
 @media (min-width: 901px) and (max-width: 1260px) {
-   .site-wrapper > header {padding: 0 16px;}
    .inner>.site-nav {width: calc(100vw - 49px);}
    .site-home-header .site-header-content{padding: 60px 55px 40px;}
  }
@@ -2524,24 +2516,6 @@ Usage (In Ghost editor):
 
 /* region styling of "get started" button */
 
-.site-nav-right > ul > li:first-child > a {
-    background: #38c690;
-    border: 1px solid #38c690;
-    display: inline-block;
-    vertical-align: middle;
-    color: #fff;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    padding: 10px 30px;
-    margin: 0;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    border-radius: .6rem;
-    -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
-    transition: box-shadow .25s ease, -webkit-transform .25s ease;
-    transition: box-shadow .25s ease, transform .25s ease;
-    transition: box-shadow .25s ease, transform .25s ease, -webkit-transform .25s ease;
-
-}
 .site-nav-right > ul > li:first-child > a:hover{
     background: #30a87a;
 }
