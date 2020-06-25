@@ -36,7 +36,8 @@ production stylesheet in assets/built/screen.css
 body {
     background: #fff;
     font-size: 16px;
-    font-family: -apple-system,BlinkMacSystemFont, "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Montserrat,sans-serif;
+    font-weight: 400;
     line-height: 1.5;
 }
 p {

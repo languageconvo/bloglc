@@ -110,6 +110,7 @@ Logo styles cleaned to image
     display: block;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 .nav li a {
@@ -297,8 +298,11 @@ Logo styles cleaned to image
 .site-nav label, #menu-toggle { display: none }
 
 @media screen and (max-width: 991px){
+   .site-nav {
+      padding: 0;     
+   }
   .site-nav label {
-	    display: inline-block;
+      display: inline-block;
       position: fixed;
       top:25px;
       right:28px;
@@ -313,14 +317,14 @@ Logo styles cleaned to image
       line-height: 1;
       cursor: pointer;
 	}
-.site-nav{
+.site-nav-container{
      padding: .5rem 1rem;
      flex-direction: column;
    }
 
 /* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective, since it's divide into
 two parts we use individual border radiuses and paddings for each of them */
-   .site-nav > div {display:none;}
+   .site-nav-container > .site-nav-wrapper {display:none;}
    .site-nav #menu-toggle:checked ~ div {
      display: flex;
      flex: 1 0 100%;
@@ -366,7 +370,6 @@ two parts we use individual border radiuses and paddings for each of them */
 	.nav li a{
 	  padding: .5rem 1.7rem;
       margin: 0;
-      line-height: 1.5;
 	}
 }
 /* get started button */
