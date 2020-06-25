@@ -352,12 +352,10 @@ two parts we use individual border radiuses and paddings for each of them */
 	   flex-direction: column;
 	   margin: 0;
 	   padding: 0;
-     flex: 1 0 100%;
-     align-items: flex-start;
+       align-items: flex-start;
 	 }
    .site-nav-logo {
       align-self: flex-start;
-      flex: 1 0 100%;
    }
    .site-nav-right	{
 	   margin:0;
