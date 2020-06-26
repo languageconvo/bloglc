@@ -7,8 +7,8 @@
     top: 0;
     width:100%;
     background: #fff;
-    padding: 1rem;
     width:100%;
+    padding: 0 1rem;
 }
 .site-nav-container{
     margin: 0 auto;
@@ -18,7 +18,7 @@
     flex: 0 1 1220px; /* since it's flex item we avoid using max-width and instead shrink it from 1220px*/
     display: flex;
     flex-wrap: nowrap;
-    padding: 0 15px;
+    padding: 1rem 15px;
     
 }
 
@@ -293,6 +293,63 @@ Logo styles cleaned to image
         display: none;
     } */
 }
+/* region navbar hover colors */
+/* how it works */
+.navbarLink1:hover {
+    border-bottom-color: #fcad26;
+    border-bottom-style: solid;
+    border-bottom-width: 1.9px;
+    padding-bottom: 4px;
+    transition-duration: .5s;
+}
+
+/* prices */
+.navbarLink2:hover {
+    border-bottom-color: #38c690;
+    border-bottom-style: solid;
+    border-bottom-width: 1.9px;
+    padding-bottom: 4px;
+    transition-duration: .5s;
+    transform-origin: left;
+}
+
+/* the Blog link always has an underlined purple, no hover action */
+.navbarLink3 {
+    border-bottom-color: #6F42C1;
+    border-bottom-style: solid;
+    padding-bottom: 4px;
+    border-bottom-width: 1.9px;
+}
+
+/* log in */
+.navbarLink4:hover {
+    border-bottom-color: #fcad26;
+    border-bottom-style: solid;
+    border-bottom-width: 1.9px;
+    padding-bottom: 4px;
+    transition-duration: .5s;
+    transform-origin: left;
+}
+
+/*endregion */
+
+/* region styling of "get started" button */
+
+.site-nav-right > ul > li:first-child > a:hover{
+    background: #30a87a;
+}
+.site-nav-right > ul > li:first-child > a::after{content: none;}
+
+/* endregion */
+
+/* region log in */
+/* only on small screens/hamburger menu, add some padding to the bottom */
+@media (max-width: 900px) {
+    .navbarLink4Container {
+        padding-bottom: 15px;
+    }
+}
+/* endregion */
 /* CSS-only hamburger */
 
 .site-nav label, #menu-toggle { display: none }
@@ -327,7 +384,7 @@ two parts we use individual border radiuses and paddings for each of them */
    .site-nav-container > .site-nav-wrapper {display:none;}
    .site-nav #menu-toggle:checked ~ div {
      display: flex;
-     flex: 1 0 100%;
+     flex: 0 1 100%;
      width: 100%;
      background: rgba(111,66,194,.2);
      border-radius: .6rem;
@@ -337,16 +394,25 @@ two parts we use individual border radiuses and paddings for each of them */
    }
    .site-nav #menu-toggle:checked ~ .site-nav-right {display:flex;}
 /* We need to specify height exlicitly since second part of menu is display:fixed */
-   .site-nav #menu-toggle:checked ~ .site-nav-wrapper {display:flex;}
+   .site-nav #menu-toggle:checked ~ .site-nav-wrapper {
+     display:block;
+   }
 /* accomodate menu to stick to the left side */
-   .site-nav-right .nav { flex-direction: row;}
+   .site-nav-right .nav { 
+        flex-direction: row;
+        height: max-content;
+   }
    .site-nav-wrapper{
 	    background: #fff no-repeat 50%;
         width: 100%;
    }
    .nav li.nav-log-in > a   {padding: 6px 1.7rem 10px;}
    .site-nav-left ul{flex-direction: column;}
-   .site-nav-left .nav li{width:100%;}
+   .site-nav-left .nav li {
+       width:100%;
+       font-size: 1.05rem;
+       line-height: 1.5;
+    }
    .site-nav-content {margin:0;}
    .site-nav-left {
 	   flex-direction: column;
@@ -362,7 +428,8 @@ two parts we use individual border radiuses and paddings for each of them */
        justify-content: flex-start;
        border-radius: 0 0 .6rem .6rem;
        padding: 15px 0 10px;
-       flex: 1 0 100%;
+       flex: 0 1 100%;
+       flex-direction: row;
 	 }
 /* adjust paddings of menu items to main site*/
 	.nav li a{

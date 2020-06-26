@@ -2475,64 +2475,6 @@ Usage (In Ghost editor):
 
 /* endregion */
 
-/* region navbar hover colors */
-/* how it works */
-.navbarLink1:hover {
-    border-bottom-color: #fcad26;
-    border-bottom-style: solid;
-    border-bottom-width: 1.9px;
-    padding-bottom: 4px;
-    transition-duration: .5s;
-}
-
-/* prices */
-.navbarLink2:hover {
-    border-bottom-color: #38c690;
-    border-bottom-style: solid;
-    border-bottom-width: 1.9px;
-    padding-bottom: 4px;
-    transition-duration: .5s;
-    transform-origin: left;
-}
-
-/* the Blog link always has an underlined purple, no hover action */
-.navbarLink3 {
-    border-bottom-color: #6F42C1;
-    border-bottom-style: solid;
-    padding-bottom: 4px;
-    border-bottom-width: 1.9px;
-}
-
-/* log in */
-.navbarLink4:hover {
-    border-bottom-color: #fcad26;
-    border-bottom-style: solid;
-    border-bottom-width: 1.9px;
-    padding-bottom: 4px;
-    transition-duration: .5s;
-    transform-origin: left;
-}
-
-/*endregion */
-
-/* region styling of "get started" button */
-
-.site-nav-right > ul > li:first-child > a:hover{
-    background: #30a87a;
-}
-.site-nav-right > ul > li:first-child > a::after{content: none;}
-
-/* endregion */
-
-/* region log in */
-/* only on small screens/hamburger menu, add some padding to the bottom */
-@media (max-width: 900px) {
-    .navbarLink4Container {
-        padding-bottom: 15px;
-    }
-}
-/* endregion */
-
 /* region widths of site description and tag dropdown */
 
 .home-template .site-header-content>.tags{
