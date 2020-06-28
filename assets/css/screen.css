@@ -105,7 +105,7 @@ p {
 
 .site-header-background {
     position: relative;
-    margin-top: 60px;
+    margin-top: 92px;
     padding-bottom: 12px;
     background: #fff no-repeat center center;
     background-size: cover;
@@ -269,6 +269,12 @@ p {
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
+.site-post-header,
+.site-archive-header{
+    margin-top: 0;
+    padding: 0;
+    z-index: 101;
+}
 .posts {
     overflow-x: hidden;
 }

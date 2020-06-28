@@ -1,7 +1,7 @@
 /* Site Navigation
 /* ---------------------------------------------------------- */
 .site-nav {
-    z-index: 100;
+    z-index: 1001;
     display: flex;
     position: fixed;
     top: 0;
@@ -93,8 +93,10 @@ Logo styles cleaned to image
 
 .site-nav-content {
     margin-left: auto; /*flex feature to stick items to the right of parent container */
+    display: flex;
 }
 
+.site-post-header
 .nav {
     position: relative;
     z-index: 1000;
@@ -105,7 +107,11 @@ Logo styles cleaned to image
     list-style: none;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
+.site-nav-content ul.nav,
+.site-archive-header .site-nav-right ul.nav{
+    display: flex;
+    
+}
 .nav li {
     display: block;
     margin: 0;
