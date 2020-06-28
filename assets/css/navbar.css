@@ -5,6 +5,7 @@
     display: flex;
     position: fixed;
     top: 0;
+    left:0;
     width:100%;
     background: #fff;
     width:100%;
@@ -107,9 +108,11 @@ Logo styles cleaned to image
     list-style: none;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.site-nav-content ul.nav,
-.site-archive-header .site-nav-right ul.nav{
+.site-nav-right ul.nav,
+.site-nav-content ul.nav{
     display: flex;
+    margin-bottom: 0;
+    padding-right: 0;
     
 }
 .nav li {
@@ -173,6 +176,7 @@ Logo styles cleaned to image
     order: 1;
     justify-content: flex-end;
     margin-left: auto; /* necessary to break the flex with whitespace*/
+    align-items: center;
 }
 
 .site-nav-right .nav {
@@ -337,6 +341,23 @@ Logo styles cleaned to image
     transform-origin: left;
 }
 
+/* get started button */
+li.nav-get-started > a.navbarButton {
+     background: #38c690;
+     border: 1px solid #38c690;
+     display: inline-block;
+     vertical-align: middle;
+     color: #fff;
+     font-size: 1.05rem;
+     line-height: 1.5;
+     padding: 10px 30px;
+     margin: 0;
+     border-radius: .6rem;
+     -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
+     transition: box-shadow .25s ease, -webkit-transform .25s ease;
+     transition: box-shadow .25s ease, transform .25s ease;
+     transition: box-shadow .25s ease, transform .25s ease, -webkit-transform .25s ease;
+}
 /*endregion */
 
 /* region styling of "get started" button */
@@ -345,6 +366,10 @@ Logo styles cleaned to image
     background: #30a87a;
 }
 .site-nav-right > ul > li:first-child > a::after{content: none;}
+
+.nav li.navbarLink4Container a {
+    padding: .6rem 0 .4rem;
+}
 
 /* endregion */
 
@@ -372,7 +397,7 @@ Logo styles cleaned to image
       background: no-repeat center/100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
       color: rgba(0,0,0,.5);
       font-style: normal;
-	    font-size: 1.1rem;
+      font-size: 1.1rem;
       content: "";
       z-index: 100;
       width: 1.65rem;
@@ -380,84 +405,80 @@ Logo styles cleaned to image
       line-height: 1;
       cursor: pointer;
 	}
-.site-nav-container{
+  .site-nav-container{
      padding: .5rem 1rem;
      flex-direction: column;
-   }
+  }
 
-/* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective, since it's divide into
-two parts we use individual border radiuses and paddings for each of them */
-   .site-nav-container > .site-nav-wrapper {display:none;}
-   .site-nav #menu-toggle:checked ~ div {
+  /* toggle menu visiility upon hamburger click, not so fancy selectors but they're effective, since it's divide into
+  two parts we use individual border radiuses and paddings for each of them */
+  .site-nav-container > .site-nav-wrapper{
+     display:none;
+    }
+  .site-nav #menu-toggle:checked ~ div {
      display: flex;
      flex: 0 1 100%;
      width: 100%;
      background: rgba(111,66,194,.2);
      border-radius: .6rem;
-     margin: 1.25rem 0 .5rem;
-     padding: 20px 20px 15px;
+     margin: 1.25rem 0 0;
+     padding: 20px 20px 25px;
      flex-direction: column;
    }
-   .site-nav #menu-toggle:checked ~ .site-nav-right {display:flex;}
-/* We need to specify height exlicitly since second part of menu is display:fixed */
-   .site-nav #menu-toggle:checked ~ .site-nav-wrapper {
+  .site-nav #menu-toggle:checked ~ .site-nav-right{
+     display:flex;
+   }
+  /* We need to specify height exlicitly since second part of menu is display:fixed */
+  .site-nav #menu-toggle:checked ~ .site-nav-wrapper {
      display:block;
+  }
+  /* accomodate menu to stick to the left side */
+  .site-nav-right .nav { 
+       flex-direction: row;
+       height: max-content;
+       padding-left: 0;
+       align-items: center;
    }
-/* accomodate menu to stick to the left side */
-   .site-nav-right .nav { 
-        flex-direction: row;
-        height: max-content;
+  .site-nav-wrapper{
+	   background: #fff no-repeat 50%;
+       width: 100%;
    }
-   .site-nav-wrapper{
-	    background: #fff no-repeat 50%;
-        width: 100%;
-   }
-   .nav li.nav-log-in > a   {padding: 6px 1.7rem 10px;}
-   .site-nav-left ul{flex-direction: column;}
-   .site-nav-left .nav li {
+  .nav li.nav-log-in > a{
+       padding: .4rem 1.7rem .6rem;
+    }
+  .site-nav-left ul{
+       flex-direction: column;
+       padding-left: 0;
+    }
+  .site-nav-left .nav li {
        width:100%;
        font-size: 1.05rem;
        line-height: 1.5;
     }
-   .site-nav-content {margin:0;}
-   .site-nav-left {
+  .site-nav-content{
+       margin:0;
+  }
+  .site-nav-left {
 	   flex-direction: column;
 	   margin: 0;
 	   padding: 0;
        align-items: flex-start;
-	 }
-   .site-nav-logo {
+  }
+  .site-nav-logo{
       align-self: flex-start;
-   }
-   .site-nav-right	{
+  }
+  /* Top padding needed in order to take dropdown caret into account */       
+  .site-nav-right{
 	   margin:0;
        justify-content: flex-start;
        border-radius: 0 0 .6rem .6rem;
-       padding: 15px 0 10px;
+       padding-top: 15px;
        flex: 0 1 100%;
        flex-direction: row;
-	 }
-/* adjust paddings of menu items to main site*/
-	.nav li a{
-	  padding: .5rem 1.7rem;
+  }
+  /* adjust paddings of menu items to main site*/
+  .nav li a{
+      padding: .5rem 1.7rem;
       margin: 0;
-	}
-}
-/* get started button */
-   li.nav-get-started > a.navbarButton {
-     background: #38c690;
-     border: 1px solid #38c690;
-     display: inline-block;
-     vertical-align: middle;
-     color: #fff;
-     font-size: 1.05rem;
-     line-height: 1.5;
-     padding: 10px 30px;
-     margin: 0;
-     border-radius: .6rem;
-     -webkit-transition: box-shadow .25s ease, -webkit-transform .25s ease;
-     transition: box-shadow .25s ease, -webkit-transform .25s ease;
-     transition: box-shadow .25s ease, transform .25s ease;
-     transition: box-shadow .25s ease, transform .25s ease, -webkit-transform .25s ease;
-
+  }
 }
