@@ -15,8 +15,10 @@
     --pink: #fa3a57;
     --brown: #a3821a;
     --primary: #38c690;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
-
+    
 /* Reset
 /* ---------------------------------------------------------- */
 
@@ -100,8 +102,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font: inherit;
-    font-size: 100%;
     vertical-align: baseline;
 }
 body {
